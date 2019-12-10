@@ -7,7 +7,7 @@ import com.newgame.xo.model.Point;
 import java.util.Random;
 
 public class AICoordinateGetter implements ICoordinateGetter {
-
+    // TODO: 12/10/19 нужно добавить медот при котором AI ходит с угла)
     public Point getMoveCoordinate(final Field field) {
 
         // BEGIN (write your solution here)
