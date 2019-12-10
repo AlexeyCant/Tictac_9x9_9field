@@ -21,7 +21,7 @@ public class CurrentMoveController {
         return Figure.O;
     }
 
-    /*private int countFiguresInTheRow(final Field field, final Integer row) {
+    private int countFiguresInTheRow(final Field field, final Integer row) {
         int countFigure = 0;
         for (int x = 0; x < field.getSize(); x++) {
             final Point p = new Point(x, row);
@@ -29,5 +29,5 @@ public class CurrentMoveController {
                 countFigure++;
         }
         return countFigure;
-    }*/
+    }
 }

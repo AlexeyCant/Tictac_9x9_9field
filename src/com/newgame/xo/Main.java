@@ -16,8 +16,8 @@ public class Main {
     public static void main(String... args) throws Exception {
         final Field field = new Field();
         final ICoordinateGetter random = new RandomCoordinateGetter();
-     //  final ICoordinateGetter ai = new AICoordinateGetter();
-        final ICoordinateGetter ai = new AICoordinateGetterTwo();
+        final ICoordinateGetter ai = new AICoordinateGetter();
+     //   final ICoordinateGetter ai = new AICoordinateGetterTwo();
         final MoveController mc = new MoveController();
         final WinnerController wc = new WinnerController();
         final ConsoleView cv = new ConsoleView();
