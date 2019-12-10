@@ -20,7 +20,14 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
                 field.getSize()-1);// правый нижний угол
 
         Point pCenter = new Point((field.getSize()-1)/2,
-                (field.getSize()-1)/2);
+                (field.getSize()-1)/2); // центральная точка
+
+        Point p01 = new Point(field.getSize()-field.getSize(), (field.getSize()-1)/2);
+        Point p10 = new Point((field.getSize()-1)/2, field.getSize()-field.getSize());
+        Point p12 = new Point((field.getSize()-1)/2, field.getSize()-1);
+        Point p21 = new Point(field.getSize()-1, (field.getSize()-1)/2);
+
+
 
         //1 шаг ствим точку в левый верхний угол
 
@@ -34,6 +41,15 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
 
         }
 
+    private int countFiguresInTheRow(final Field field, final Integer row) {
+        int countFigure = 0;
+        for (int x = 0; x < field.getSize(); x++) {
+            final Point p = new Point(x, row);
+            if (field.getFigure(p) != null)
+                countFigure++;
+        }
+        return countFigure;
+    }
 
 }
 
