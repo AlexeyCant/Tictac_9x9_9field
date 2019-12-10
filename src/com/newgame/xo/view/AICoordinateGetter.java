@@ -7,7 +7,7 @@ import com.newgame.xo.model.Point;
 import java.util.Random;
 
 public class AICoordinateGetter implements ICoordinateGetter {
-    private static final Random RANDOM = new Random();
+
     public Point getMoveCoordinate(final Field field) {
 
         // BEGIN (write your solution here)
