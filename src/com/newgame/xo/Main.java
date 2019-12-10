@@ -9,20 +9,22 @@ import com.newgame.xo.view.AICoordinateGetter;
 import com.newgame.xo.view.ConsoleView;
 import com.newgame.xo.view.ICoordinateGetter;
 import com.newgame.xo.view.RandomCoordinateGetter;
+import com.newgame.xo.view.AICoordinateGetterTwo;
 
 public class Main {
 
     public static void main(String... args) throws Exception {
         final Field field = new Field();
         final ICoordinateGetter random = new RandomCoordinateGetter();
-        final ICoordinateGetter ai = new AICoordinateGetter();
+     //  final ICoordinateGetter ai = new AICoordinateGetter();
+        final ICoordinateGetter ai = new AICoordinateGetterTwo();
         final MoveController mc = new MoveController();
         final WinnerController wc = new WinnerController();
         final ConsoleView cv = new ConsoleView();
         cv.show(field);
 
         for (int i = 0; i < 9; i++) {
-            Thread.sleep(500);
+            Thread.sleep(1000);
             final Point p;
             if (i % 2 == 0)
                 p = ai.getMoveCoordinate(field);
