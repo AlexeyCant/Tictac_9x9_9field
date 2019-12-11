@@ -27,13 +27,18 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
         Point p12 = new Point((field.getSize()-1)/2, field.getSize()-1);
         Point p21 = new Point(field.getSize()-1, (field.getSize()-1)/2);
 
-
+        int countFigure = 0;
+        for (int x = 0; x < field.getSize(); x++){
+            countFigure += countFiguresInOneRow(field, x);
+        }
 
         //1 шаг ствим точку в левый верхний угол
 
-            if(field.isEmpty()) {
+            if(field.isEmpty())
             return p00;
-            } else {if (field.getFigure(pCenter) != null) {
+            if (countFigure = 2)
+                return
+            else {if (field.getFigure(pCenter) != null) {
                 return p22;
             } else { return pCenter; }
 
@@ -41,7 +46,7 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
 
         }
 
-/*    private int countFiguresInTheRow(final Field field, final Integer row) {
+    private int countFiguresInOneRow (final Field field, final Integer row) {
         int countFigure = 0;
         for (int x = 0; x < field.getSize(); x++) {
             final Point p = new Point(x, row);
