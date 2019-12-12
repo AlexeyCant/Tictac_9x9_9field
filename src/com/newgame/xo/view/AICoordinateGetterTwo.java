@@ -3,6 +3,7 @@ package com.newgame.xo.view;
 import com.newgame.xo.model.Field;
 import com.newgame.xo.model.Figure;
 import com.newgame.xo.model.Point;
+import com.sun.xml.internal.bind.v2.TODO;
 
 public class AICoordinateGetterTwo implements ICoordinateGetter {
 // нерандомный ход с угла
@@ -46,9 +47,13 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
                 return p02;
             if (countFigure == 2 && field.getFigure(p02) != null)
                 return p20;
-            if (countFigure == 2 && (field.getFigure(p01) != null || field.getFigure(p10) != null ||
-                    field.getFigure(p12) != null || field.getFigure(p21) != null ))
+            if (countFigure == 2 && ( field.getFigure(p10) != null
+                || field.getFigure(p12) != null
+                || field.getFigure(p21) != null ))
                 return p02;
+            if (countFigure == 2 && (field.getFigure(p01) != null
+                 ))
+                return p20;
 
             //шаг третий (на доске четыре фигуры)
             if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p02))
@@ -57,18 +62,100 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
             if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p20))
                     && field.getFigure(p10) == null)
                 return p10;
-            if(countFigure == 4 && field.getFigure(p01)!= null && field.getFigure(p10) != null) //добавить проверку на Х в углах
+            if(countFigure == 4 && field.getFigure(p01)!= null
+                    && field.getFigure(p10) != null) //добавить проверку на Х в углах
                 return p22;
-            if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p02)) && field.getFigure(p01) != null)
-                return p20;
-            if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p20)) && field.getFigure(p10) != null)
+            if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p02))
+                    && field.getFigure(p01) != null
+                    && (field.getFigure(p10) != null || field.getFigure(p20) != null))
+                return p22;
+            if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p20))
+                    && field.getFigure(p10) != null
+                    && (field.getFigure(p01) != null || field.getFigure(p02) != null))
+                return p22;
+            if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(p01) != null
+                && (field.getFigure(p01).equals(field.getFigure(p21))))
+                return pCenter;
+            if(countFigure == 4 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p10) != null
+                && field.getFigure(p10).equals(field.getFigure(p12)))
+                return pCenter;
+            if(countFigure == 4 && field.getFigure(p10)!= null
+                && (field.getFigure(p21) != null|| field.getFigure(p20) != null))
                 return p02;
 
+            if(countFigure == 4 && field.getFigure(pCenter)!= null
+                && field.getFigure(pCenter).equals(field.getFigure(p10)))
+            return p12;
+            if(countFigure == 4 && field.getFigure(pCenter)!= null
+                    && field.getFigure(pCenter).equals(field.getFigure(p20)))
+            return p02;
+            if(countFigure == 4 && field.getFigure(pCenter)!= null
+                    && field.getFigure(pCenter).equals(field.getFigure(p21)))
+            return p01;
+            if(countFigure == 4 && field.getFigure(pCenter)!= null
+                    && field.getFigure(pCenter).equals(field.getFigure(p01)))
+            return p21;
+            if(countFigure == 4 && field.getFigure(pCenter)!= null
+                    && field.getFigure(pCenter).equals(field.getFigure(p02)))
+            return p20;
+            if(countFigure == 4 && field.getFigure(pCenter)!= null
+                    && field.getFigure(pCenter).equals(field.getFigure(p12)))
+            return p10;
+
             //шаг четвертый (на доске шесть фигур)
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p02))
+                    && field.getFigure(p00).equals(field.getFigure(p22))
+                && field.getFigure(pCenter) == null)
+                return pCenter;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p00).equals(field.getFigure(p22))
+                && field.getFigure(pCenter) == null)
+                return pCenter;
+             if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(pCenter) == null)
+                return pCenter;
 
-            //шаг пятый (на доске пять фигур)
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(p00).equals(field.getFigure(p22))
+                && field.getFigure(pCenter) == null)
+                return p12;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p00).equals(field.getFigure(p22))
+                && field.getFigure(pCenter) != null)
+                return p21;
 
-            return p00;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(pCenter) != null)
+                return p10;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(pCenter) != null)
+                 return p01;
+
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                    && field.getFigure(p00).equals(field.getFigure(pCenter))
+                    && field.getFigure(p02) != null)
+                return p22;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p20))
+                && field.getFigure(p00).equals(field.getFigure(pCenter))
+                && field.getFigure(p22) != null)
+                return p02;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(p00).equals(field.getFigure(pCenter))
+                && field.getFigure(p20) != null)
+                return p22;
+            if(countFigure == 6 && field.getFigure(p00).equals(field.getFigure(p02))
+                && field.getFigure(p00).equals(field.getFigure(pCenter))
+                && field.getFigure(p02) != null)
+                return p20;
+            //todo нужна контра при ходах через центр
+            //шаг пятый (на доске восемь фигур)
+
+            return new RandomCoordinateGetter().getMoveCoordinate(field);
 
 
         }
