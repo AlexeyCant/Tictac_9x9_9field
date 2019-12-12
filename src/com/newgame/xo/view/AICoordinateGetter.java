@@ -7,12 +7,11 @@ import com.newgame.xo.model.Point;
 import java.util.Random;
 
 public class AICoordinateGetter implements ICoordinateGetter {
-    // TODO: 12/10/19 нужно добавить медот при котором AI ходит с угла)
+  // полу рандомный ход с центра
 
     public Point getMoveCoordinate(final Field field) {
 
-        // BEGIN (write your solution here)
-        //##Решение для игры не только с рандомайзером##
+
         // Сразу же сгенерируем для себя самые выгодные ходы на поле:
         Point p00 = new Point(field.getSize() - field.getSize()
                 , field.getSize() - field.getSize());// левый верхний угол
