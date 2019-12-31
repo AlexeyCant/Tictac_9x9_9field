@@ -4,7 +4,7 @@ import com.newgame.xo.model.Field;
 import com.newgame.xo.model.Point;
 import java.util.Random;
 
-public class RandomCoordinateGetter implements ICoordinateGetter {
+public class RandomCoordinateGetter extends ICoordinateGetter {
 
     private static final Random RANDOM = new Random();
 

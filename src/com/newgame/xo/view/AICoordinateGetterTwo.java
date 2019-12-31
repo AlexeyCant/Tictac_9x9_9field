@@ -5,7 +5,8 @@ import com.newgame.xo.model.Figure;
 import com.newgame.xo.model.Point;
 import com.sun.xml.internal.bind.v2.TODO;
 
-public class AICoordinateGetterTwo implements ICoordinateGetter {
+
+public class AICoordinateGetterTwo extends ICoordinateGetter {
 // нерандомный ход с угла
     public Point getMoveCoordinate (final Field field){
 
@@ -155,6 +156,8 @@ public class AICoordinateGetterTwo implements ICoordinateGetter {
             //todo нужна контра при ходах через центр
             //шаг пятый (на доске восемь фигур)
 
+
+        //todo заменить рандом
             return new RandomCoordinateGetter().getMoveCoordinate(field);
 
 
