@@ -4,7 +4,7 @@ import com.newgame.xo.model.Field;
 import com.newgame.xo.model.Figure;
 import com.newgame.xo.model.Point;
 
-public class ConsoleView extends ICoordinateGetter {
+public class ConsoleView implements ICoordinateGetter {
 
     public Point getMoveCoordinate(final Field field) {
         return new Point(0, 0);

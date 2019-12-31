@@ -3,6 +3,7 @@ package com.newgame.xo.view;
 import com.newgame.xo.model.Field;
 import com.newgame.xo.model.Point;
 import java.util.Random;
+import com.newgame.xo.view.ICoordinateGetter;
 
 public class RandomCoordinateGetter implements ICoordinateGetter {
 
