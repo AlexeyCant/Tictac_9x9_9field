@@ -5,7 +5,7 @@ import com.newgame.xo.model.Point;
 
 public interface ICoordinateGetter {
 
-    public abstract Point getMoveCoordinate(final Field field);
+    public Point getMoveCoordinate(final Field field);
 
 }
 
