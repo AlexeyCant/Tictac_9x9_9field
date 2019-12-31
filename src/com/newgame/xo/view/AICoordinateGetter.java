@@ -6,7 +6,7 @@ import com.newgame.xo.model.Point;
 
 import java.util.Random;
 
-public class AICoordinateGetter extends ICoordinateGetter {
+public class AICoordinateGetter implements ICoordinateGetter {
   // полу рандомный ход с центра
 
     public Point getMoveCoordinate(final Field field) {

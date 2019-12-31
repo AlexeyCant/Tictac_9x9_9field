@@ -6,7 +6,7 @@ import com.newgame.xo.model.Point;
 import com.sun.xml.internal.bind.v2.TODO;
 
 
-public class AICoordinateGetterTwo extends ICoordinateGetter {
+public class AICoordinateGetterTwo implements ICoordinateGetter {
 // нерандомный ход с угла
     public Point getMoveCoordinate (final Field field){
 
